@@ -49,7 +49,7 @@
                                 <rect key="frame" x="20" y="513" width="374" height="270"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="v1_menu" translatesAutoresizingMaskIntoConstraints="NO" id="9Pi-Lj-Z3x">
-                                        <rect key="frame" x="8" y="8" width="91" height="44.000000000000007"/>
+                                        <rect key="frame" x="8" y="8" width="182" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="bis-fe-Egj"/>
                                         </constraints>
@@ -69,13 +69,13 @@
                                                             <rect key="frame" x="0.0" y="-54" width="358" height="128"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HQ-gC-E7a">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HQ-gC-E7a">
                                                             <rect key="frame" x="29.5" y="-1" width="46.5" height="23"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="v1_btn2" translatesAutoresizingMaskIntoConstraints="NO" id="Pt3-Ih-LEc">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="v1_btn2" translatesAutoresizingMaskIntoConstraints="NO" id="Pt3-Ih-LEc">
                                                             <rect key="frame" x="332" y="1" width="6" height="18"/>
                                                         </imageView>
                                                     </subviews>
