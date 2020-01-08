@@ -58,13 +58,45 @@
                                         <rect key="frame" x="8" y="75" width="358" height="168"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellCategorie" rowHeight="20" id="Fp2-B2-4Rg">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellCategorie" rowHeight="20" id="Fp2-B2-4Rg" customClass="CategorieTableViewCell" customModule="ECEResto2020" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="358" height="20"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fp2-B2-4Rg" id="x0b-D2-2B7">
                                                     <rect key="frame" x="0.0" y="0.0" width="358" height="20"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="v1_btn1" translatesAutoresizingMaskIntoConstraints="NO" id="FCG-uX-tKR">
+                                                            <rect key="frame" x="0.0" y="-54" width="358" height="128"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HQ-gC-E7a">
+                                                            <rect key="frame" x="29.5" y="-1" width="46.5" height="23"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="v1_btn2" translatesAutoresizingMaskIntoConstraints="NO" id="Pt3-Ih-LEc">
+                                                            <rect key="frame" x="332" y="1" width="6" height="18"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="5HQ-gC-E7a" secondAttribute="bottom" constant="-2" id="IX4-RK-u8E"/>
+                                                        <constraint firstItem="Pt3-Ih-LEc" firstAttribute="leading" secondItem="5HQ-gC-E7a" secondAttribute="trailing" constant="256" id="Puh-ec-K1t"/>
+                                                        <constraint firstItem="Pt3-Ih-LEc" firstAttribute="leading" secondItem="5HQ-gC-E7a" secondAttribute="trailing" constant="256" id="UAx-rd-wRu"/>
+                                                        <constraint firstItem="5HQ-gC-E7a" firstAttribute="leading" secondItem="x0b-D2-2B7" secondAttribute="leading" constant="29.5" id="XE4-Az-gxG"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Pt3-Ih-LEc" secondAttribute="trailing" constant="20" id="Z4K-U3-qiY"/>
+                                                        <constraint firstItem="Pt3-Ih-LEc" firstAttribute="top" secondItem="x0b-D2-2B7" secondAttribute="top" constant="1" id="bCc-oF-edg"/>
+                                                        <constraint firstItem="5HQ-gC-E7a" firstAttribute="top" secondItem="x0b-D2-2B7" secondAttribute="top" constant="-1" id="dlX-8Z-SQg"/>
+                                                        <constraint firstItem="Pt3-Ih-LEc" firstAttribute="leading" secondItem="5HQ-gC-E7a" secondAttribute="trailing" constant="256" id="ekR-62-HTJ"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Pt3-Ih-LEc" secondAttribute="trailing" constant="20" symbolic="YES" id="gel-5o-lyg"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Pt3-Ih-LEc" secondAttribute="bottom" constant="1" id="lXG-5E-xoo"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Pt3-Ih-LEc" secondAttribute="bottom" constant="1" id="rjI-oh-g26"/>
+                                                        <constraint firstItem="Pt3-Ih-LEc" firstAttribute="top" secondItem="x0b-D2-2B7" secondAttribute="top" constant="1" id="w55-fd-0pk"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="nomCatCell" destination="5HQ-gC-E7a" id="u6u-Nm-dW7"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
@@ -261,6 +293,7 @@
     <resources>
         <image name="v0_fondcomplet1-1" width="320" height="568"/>
         <image name="v1_btn1" width="231.5" height="25"/>
+        <image name="v1_btn2" width="6" height="8.5"/>
         <image name="v1_fond" width="320" height="524"/>
         <image name="v1_ico1" width="25.5" height="22"/>
         <image name="v1_ico2" width="16" height="22"/>
