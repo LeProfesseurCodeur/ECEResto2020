@@ -10,18 +10,17 @@ import UIKit
 
 class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet var tableCategorie: UITableView!
     
     var arrayCategories = [[String:String]]()
+    //var parametre1 = [String:String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let c1 = ["idc":"1","nomc":"Entrées"]
-        let c2 = ["idc":"2","nomc":"Plats"]
-        let c3 = ["idc":"3","nomc":"Desserts"]
-        let c4 = ["idc":"4","nomc":"Menus"]
-        let c5 = ["idc":"5","nomc":"Boisson"]
+        DataBase.checkAndCreateDatabase()
         
-        arrayCategories = [c1, c2, c3, c4, c5]
+        arrayCategories = DataBase().executerSelect("SELECT * FROM categorie_plats") as! [[String : String]]
+        
     }
     
     func nombreDeSections(in tableView: UITableView) -> Int {
@@ -32,12 +31,25 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return arrayCategories.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellule = tableView.dequeueReusableCell(withIdentifier: "cellCategorie", for: indexPath)
-        let nomCategorie = arrayCategories[indexPath.row]["nomc"]
+        let cellule = tableView.dequeueReusableCell(withIdentifier: "cellCategorie", for: indexPath) as! CategorieTableViewCell
+        let nomCategorie = arrayCategories[indexPath.row]["nom_categorie"]
         
-        cellule.textLabel?.text = nomCategorie
-        
+        cellule.nomCatCell?.text = nomCategorie
         return cellule
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        if segue.identifier == "categorie2plats"{
+            
+            if let indexPath = self.tableCategorie.indexPathForSelectedRow {
+            
+            let categorieSelection = arrayCategories[indexPath.row]
+            
+            
+            let objVDestination = segue.destination as! PlatsTableViewController
+            objVDestination.parametre1 = categorieSelection
+            }
+        }
     }
 
 }
