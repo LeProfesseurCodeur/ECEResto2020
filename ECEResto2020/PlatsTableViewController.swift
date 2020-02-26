@@ -14,14 +14,11 @@ class PlatsTableViewController: UITableViewController {
     var parametre1 = [String:String]()
     var objDAO = DataBase()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         confNavBar()
         
         if let idCategorie = parametre1["id_categorie"]{
-        
         let query = "SELECT * FROM plats_nourriture WHERE id_categorie = \(idCategorie)"
         print(query)
         arrayPlats = DataBase().executerSelect(query) as! [[String : String]]
@@ -36,10 +33,8 @@ class PlatsTableViewController: UITableViewController {
     
     func confNavBar(){
     self.navigationController?.navigationBar.setBackgroundImage(UIImage(named: "v2_barre_titre"), for: .default)
-        
         let logo = UIImage(named: "v2_logo")
         self.navigationItem.titleView = UIImageView(image:logo)
-        
     self.navigationItem.leftBarButtonItem = UIBarButtonItem(title:"", style:.plain, target: nil, action: nil)
     }
     
@@ -68,7 +63,6 @@ class PlatsTableViewController: UITableViewController {
     func parsingWSAndSync(idcat:String){
     OperationQueue().addOperation {
         let routeJson = "https://creagates.com/listeplatsfinal.php?idc=\(idcat)"
-        
         let urlJson = URL(string: routeJson)
         do{
             let donneeJson = try Data(contentsOf: urlJson!)
@@ -76,9 +70,7 @@ class PlatsTableViewController: UITableViewController {
                 let arrayDonnee = try JSONSerialization.jsonObject(with: donneeJson, options: .mutableContainers) as! [[String:String]]
                 
                 print("arrayDatos: \(arrayDonnee)")
-                
                 let queryDelete = "DELETE FROM plats_nourriture WHERE id_categorie =\(idcat)"
-                
                 print("queryDelete : \(queryDelete)")
                 
                 self.objDAO.executerDelete(queryDelete)
@@ -95,13 +87,10 @@ class PlatsTableViewController: UITableViewController {
                     
                     self.objDAO.executerInsert(queryInsert)
                 }
-                
                  }catch{
                 print("error1")
             }
-            
             OperationQueue.main.addOperation({
-                
                 let query = "SELECT * FROM plats_nourriture WHERE id_categorie = \(idcat)"
                 print(query)
                 self.arrayPlats = DataBase().executerSelect(query) as! [[String : String]]
@@ -109,14 +98,13 @@ class PlatsTableViewController: UITableViewController {
                 self.tableView.reloadData()
             })
             
-        }catch{
+        } catch {
             print("erreur2")
         }
         
         }
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellPlats", for: indexPath) as! CustomCellPlatsTableViewCell
         
@@ -173,12 +161,8 @@ class PlatsTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "desc2plats"{
-            
             if let indexPath = self.tableView.indexPathForSelectedRow {
-            
             let objetPlat = arrayPlats[indexPath.row]
-            
-            
             let objVDesc = segue.destination as! DescPlatTableViewController
             objVDesc.parametre2 = objetPlat
             }

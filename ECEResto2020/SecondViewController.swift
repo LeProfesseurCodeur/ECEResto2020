@@ -11,7 +11,6 @@ import UIKit
 class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var tableCategorie: UITableView!
-    
     var arrayCategories = [[String:String]]()
     //var parametre1 = [String:String]()
 
@@ -40,12 +39,8 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "categorie2plats"{
-            
             if let indexPath = self.tableCategorie.indexPathForSelectedRow {
-            
             let categorieSelection = arrayCategories[indexPath.row]
-            
-            
             let objVDestination = segue.destination as! PlatsTableViewController
             objVDestination.parametre1 = categorieSelection
             }

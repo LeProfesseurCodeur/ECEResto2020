@@ -36,6 +36,7 @@
 		004BD81923C5C50700506EA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		004BD81C23C5C50700506EA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		004BD81E23C5C50700506EA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00C544542403C79700C88CF8 /* PlatsBD.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = PlatsBD.sqlite; sourceTree = "<group>"; };
 		00D95A3A23C5EBA9000D13BA /* CategorieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorieTableViewCell.swift; sourceTree = "<group>"; };
 		B408E49723D7335000B8D026 /* DescPlatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescPlatTableViewController.swift; sourceTree = "<group>"; };
 		B408E49923D745BD00B8D026 /* ECEResto2020-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ECEResto2020-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -86,6 +87,7 @@
 				B413337123E874990008553C /* DataBase.h */,
 				B413337223E874990008553C /* DataBase.m */,
 				B413337323E874990008553C /* PlatsBD.sqlite */,
+				00C544542403C79700C88CF8 /* PlatsBD.sqlite */,
 				B49ECB5A23CC73DE00F5398F /* PlatsTableViewController.swift */,
 				004BD80E23C5C50600506EA8 /* AppDelegate.swift */,
 				004BD81023C5C50600506EA8 /* SceneDelegate.swift */,
